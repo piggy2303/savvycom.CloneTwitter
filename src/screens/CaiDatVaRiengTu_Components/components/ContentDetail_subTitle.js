@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import styles from "./ContentDetailStyle";
+import styles from "./ContentDetail_subTitleStyle";
 
-export default class ContentDetail extends Component {
+export default class ContentDetail_subTitle extends Component {
   constructor(props) {
     super(props);
   }
@@ -13,7 +13,7 @@ export default class ContentDetail extends Component {
           onPress={() => this.props.navigate(this.props.navigateDestination)}
         >
           <Text style={styles.titleText}> {this.props.title} </Text>
-          
+          <Text style={styles.subTitleText}>{this.props.subTitle}</Text>
         </TouchableOpacity>
       </View>
     );

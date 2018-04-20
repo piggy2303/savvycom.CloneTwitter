@@ -32,6 +32,7 @@ export default class CaiDatVaRiengTu extends Component {
               navigate={this.props.navigation.navigate}
               navigateDestination="RiengTuVaBaoMat"
             />
+
             <ContentDetail
               title="Thông báo"
               navigate={this.props.navigation.navigate}
