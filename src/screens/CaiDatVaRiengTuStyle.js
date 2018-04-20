@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
   },
   ViewContent:{
     flex: 9,
-    
   }
 });
 

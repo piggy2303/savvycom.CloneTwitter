@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text,TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 import styles from "./HeaderStyle";
@@ -11,13 +11,16 @@ export default class Header extends Component {
   render() {
     return (
       <View style={styles.ViewMain}>
-        <View style={styles.icon}>
+        <TouchableOpacity 
+        style={styles.icon}
+        onPress={() => this.props.navigate(this.props.navigateDestination)}
+        >
           <Ionicons
             name={this.props.iconName}
             size={30}
             color={this.props.iconColor}
           />
-        </View>
+        </TouchableOpacity>
         <View style={styles.title}>
           <Text style={styles.titleText}>{this.props.title}</Text>
         </View>

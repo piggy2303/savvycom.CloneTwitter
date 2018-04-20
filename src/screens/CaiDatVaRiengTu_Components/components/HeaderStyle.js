@@ -11,14 +11,15 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center"
+    // alignItems: "center"
+    marginLeft: 20,
   },
   title: {
     flex: 6,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
-    marginLeft: 20,
+    marginLeft: 15,
   },
   titleText: {
     fontSize: 20,
