@@ -16,6 +16,7 @@ import TrungTamTroGiup from "./screens/TrungTamTroGiup";
 const AppStack = StackNavigator(
   {
     Drawer: { screen: Drawer },
+    
   },
   {
     initialRouteName: "Drawer",

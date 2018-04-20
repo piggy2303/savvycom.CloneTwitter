@@ -23,6 +23,7 @@ export default class TaiKhoan extends Component {
         <View style={styles.ViewContent}>
           <ScrollView>
             <ContentCaption title="Đăng nhập và bảo mật" />
+
             <ContentDetail_subTitle
               title="Tên người dùng"
               subTitle="NguyenTuanAnh"
@@ -56,7 +57,7 @@ export default class TaiKhoan extends Component {
 
             <ContentCaption title="Dữ liệu và sự cho phép" />
             <ContentDetail_subTitle
-              title="Quốc gia"
+               title="Quốc gia"
               subTitle="Việt Nam"
               navigate={this.props.navigation.navigate}
               navigateDestination=""
