@@ -24,7 +24,12 @@ export default class ViTriVaProxy extends Component {
         <View style={styles.ViewContent}>
           <ScrollView>
             <ContentTickBox title="Vị trí" />
-            <ContentDetail_subTitle title="Proxy" subTitle="Cấu hình HTTP cho yêu cầu mạng" />
+            <ContentDetail_subTitle
+              title="Proxy"
+              subTitle="Cấu hình HTTP cho yêu cầu mạng"
+              navigate={this.props.navigation.navigate}
+              navigateDestination=""
+            />
           </ScrollView>
         </View>
       </View>

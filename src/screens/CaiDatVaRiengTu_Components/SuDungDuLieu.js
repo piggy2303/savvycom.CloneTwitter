@@ -30,10 +30,14 @@ export default class SuDungDuLieu extends Component {
             <ContentDetail_subTitle
               title="Tự động phát video"
               subTitle="Dữ liệu di động & wifi"
+              navigate={this.props.navigation.navigate}
+              navigateDestination=""
             />
             <ContentDetail_subTitle
               title="Video chất lượng cao"
               subTitle="Chỉ wifi"
+              navigate={this.props.navigation.navigate}
+              navigateDestination=""
             />
 
             <ContentCaption title="Đồng bộ dữ liệu" />
@@ -41,6 +45,8 @@ export default class SuDungDuLieu extends Component {
             <ContentDetail_subTitle
               title="Khoảng thời gian đồng bộ"
               subTitle="Hàng ngày"
+              navigate={this.props.navigation.navigate}
+              navigateDestination=""
             />
           </ScrollView>
         </View>

@@ -24,7 +24,8 @@ export default class HienThiVaAmThanh extends Component {
         <View style={styles.ViewContent}>
           <ScrollView>
             <ContentCaption title="Hiển thị" />
-            <ContentDetail_subTitle title="Chế độ ban đêm" subTitle="Tắt"/>
+            <ContentDetail_subTitle title="Chế độ ban đêm" subTitle="Tắt" navigate={this.props.navigation.navigate}
+              navigateDestination=""/>
 
             <ContentCaption title="Âm thanh" />
             <ContentTickBox title="Hiệu ứng âm thanh"/>

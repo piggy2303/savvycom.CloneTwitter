@@ -30,7 +30,8 @@ export default class KhaNangTruyCap extends Component {
             <ContentTickBox title="Giảm chuyển động" />
             <ContentDetail_subTitle
               title="Tự động phát video"
-              subTitle="Dữ liệu di động & Wifi"
+              subTitle="Dữ liệu di động & Wifi" navigate={this.props.navigation.navigate}
+              navigateDestination=""
             />
           </ScrollView>
         </View>
