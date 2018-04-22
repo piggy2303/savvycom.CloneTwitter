@@ -33,7 +33,9 @@ import DangTheoDoi from "./screens/DangTheoDoi";
 import Home from "./screens/Home";
 import HomeThongBao from "./screens/Home_Components/HomeThongBao";
 import TimKiem from "./screens/Home_Components/TimKiem";
+
 import TinNhan from "./screens/Home_Components/TinNhan";
+import TinNhanDetail from './screens/Home_Components/TinNhan_Component/TinNhanDetai';
 
 const CaiDatVaRiengTuStack = StackNavigator(
   {
@@ -53,16 +55,23 @@ const CaiDatVaRiengTuStack = StackNavigator(
   }
 );
 
-const HomeTabHeader = StackNavigator({
-  Home: { screen: Home }
-});
+const TinNhanStack = StackNavigator (
+  {
+    TinNhan : {screen: TinNhan},
+    TinNhanDetail :{screen:TinNhanDetail}
+  },
+  {
+    initialRouteName: "TinNhan",
+    headerMode: "none"
+  }
+)
 
 const HomeTab = TabNavigator(
   {
     Home: { screen: Home },
     TimKiem: { screen: TimKiem },
     HomeThongBao: { screen: HomeThongBao },
-    TinNhan: { screen: TinNhan }
+    TinNhan: { screen: TinNhanStack }
   },
   {
     navigationOptions: ({ navigation }) => ({

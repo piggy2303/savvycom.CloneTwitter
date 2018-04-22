@@ -5,56 +5,9 @@ import HeaderHome from "./HeaderHome";
 import Content from './TinNhan_Component/Content'
 import styles from "../HomeStyle";
 
-const data = [
-  {
-    id: 1,
-    name: "Elsi",
-    nick: "Bonnor",
-    mess: "middleware Elsi Bonnorm iddlew are Elsi Bonn ormidd leware Elsi Bonno rmidd leware Elsi"
-  }, 
-  {
-    id: 2,
-    name: "Tessa",
-    nick: "McGloughlin",
-    mess: "exuding McGloughlin Tessa"
-  },
-  {
-    id: 3,
-    name: "Nigel",
-    nick: "Brunker",
-    mess: "defect Brunker Nigel"
-  },
-  {
-    id: 4,
-    name: "Lesli",
-    nick: "Greed ",
-    mess: "leading Lesli Greed"
-  },
-  {
-    id: 5,
-    name: "Marlyn",
-    nick: "Heningam",
-    mess: "national"
-  },
-  {
-    id: 6,
-    name: "Herschel",
-    nick: "Craighall",
-    mess: "group"
-  },
-  {
-    id: 7,
-    name: "Gerald",
-    nick: "Kingscote",
-    mess: "Future-proofed"
-  },
-  {
-    id: 8,
-    name: "Demetra",
-    nick: "Clemente",
-    mess: "challenge"
-  }
-];
+import TinNhanData from './TinNhan_Component/TinNhanData';
+
+const data = TinNhanData();
 
 export default class TinNhan extends Component {
   randomImage() {
@@ -81,6 +34,8 @@ export default class TinNhan extends Component {
             data={data}
             renderItem={({ item }) => (
               <Content
+                navigate={this.props.navigation.navigate}
+                navigateDestination="TinNhanDetail"
                 image={this.randomImage()}
                 time={this.randomTime()}
                 data={item}

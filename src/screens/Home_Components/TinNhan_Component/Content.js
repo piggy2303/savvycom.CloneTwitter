@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image,TouchableOpacity } from "react-native";
 import styles from "./ContentStyle";
 
+import TinNhanData2 from './TinNhanData2';
+const dataMess = TinNhanData2();
 export default class Content extends Component {
   constructor(props){
     super(props);
@@ -67,7 +69,9 @@ export default class Content extends Component {
   }
   render() {
     return (
-      <View style={styles.ViewMain}>
+      <TouchableOpacity
+      onPress={() => this.props.navigate(this.props.navigateDestination,{data: dataMess[this.props.data.id]})}
+      style={styles.ViewMain}>
         <View style={styles.ViewAvatar}>
         <Image
             style={styles.Avatar}
@@ -88,7 +92,7 @@ export default class Content extends Component {
         <View style={styles.ViewTime}>
           <Text>{this.props.time} giờ</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }

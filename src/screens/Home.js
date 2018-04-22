@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text,FlatList } from "react-native";
 import styles from './HomeStyle';
 
 import HomeData from './HomeData';
 import HeaderHome from './Home_Components/HeaderHome';
 
 const data = HomeData();
+
 export default class Home extends Component {
   render() {
     return (
@@ -18,7 +19,17 @@ export default class Home extends Component {
           />
         </View>
         <View style={styles.ViewContent}>
-          <Text> Homesdf </Text>
+        {/* <FlatList
+            data={data}
+            renderItem={({ item }) => (
+              <Content
+                image={this.randomImage()}
+                time={this.randomTime()}
+                data={item}
+              />
+            )}
+            keyExtractor={(item, index) => index.toString()}
+          /> */}
         </View>
       </View>
     );
