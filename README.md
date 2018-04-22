@@ -1,1 +1,3 @@
-# Twitter app just clone UX UI
+# Twitter app 
+just clone UX UI
+NguyenTuanAnh
