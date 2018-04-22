@@ -22,6 +22,9 @@ import KhaNangTruyCap from "./screens/CaiDatVaRiengTu_Components/KhaNangTruyCap"
 import ViTriVaProxy from "./screens/CaiDatVaRiengTu_Components/ViTriVaProxy";
 import GioiThieuTwitter from "./screens/CaiDatVaRiengTu_Components/GioiThieuTwitter";
 
+import NguoiTheoDoi from "./screens/NguoiTheoDoi";
+import DangTheoDoi from "./screens/DangTheoDoi";
+
 const CaiDatVaRiengTuStack = StackNavigator(
   {
     CaiDatVaRiengTu: { screen: CaiDatVaRiengTu },
@@ -49,7 +52,9 @@ const Drawer = DrawerNavigator(
     KhoanhKhac: { screen: KhoanhKhac },
     CaiDatVaRiengTu: { screen: CaiDatVaRiengTuStack },
     TrungTamTroGiup: { screen: TrungTamTroGiup },
-    TaiKhoan: { screen: TaiKhoan }
+    TaiKhoan: { screen: TaiKhoan },
+    NguoiTheoDoi: { screen: NguoiTheoDoi },
+    DangTheoDoi: { screen: DangTheoDoi }
   },
   {
     initialRouteName: "Home",
