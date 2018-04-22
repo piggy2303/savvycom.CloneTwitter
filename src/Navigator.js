@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { View, Text, Dimensions } from "react-native";
-import { DrawerNavigator, StackNavigator } from "react-navigation";
+import {
+  DrawerNavigator,
+  StackNavigator,
+  TabNavigator,
+  TabBarBottom
+} from "react-navigation";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
-import Home from "./screens/Home";
 import HoSo from "./screens/HoSo";
 import DanhSach from "./screens/DanhSach";
 import DauTrang from "./screens/DauTrang";
@@ -25,6 +30,11 @@ import GioiThieuTwitter from "./screens/CaiDatVaRiengTu_Components/GioiThieuTwit
 import NguoiTheoDoi from "./screens/NguoiTheoDoi";
 import DangTheoDoi from "./screens/DangTheoDoi";
 
+import Home from "./screens/Home";
+import HomeThongBao from "./screens/Home_Components/HomeThongBao";
+import TimKiem from "./screens/Home_Components/TimKiem";
+import TinNhan from "./screens/Home_Components/TinNhan";
+
 const CaiDatVaRiengTuStack = StackNavigator(
   {
     CaiDatVaRiengTu: { screen: CaiDatVaRiengTu },
@@ -43,9 +53,59 @@ const CaiDatVaRiengTuStack = StackNavigator(
   }
 );
 
-const Drawer = DrawerNavigator(
+const HomeTabHeader = StackNavigator({
+  Home: { screen: Home }
+});
+
+const HomeTab = TabNavigator(
   {
     Home: { screen: Home },
+    TimKiem: { screen: TimKiem },
+    HomeThongBao: { screen: HomeThongBao },
+    TinNhan: { screen: TinNhan }
+  },
+  {
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === "Home") {
+          iconName = `ios-home${focused ? "" : "-outline"}`;
+        } else if (routeName === "HomeThongBao") {
+          iconName = `ios-notifications${focused ? "" : "-outline"}`;
+        } else if (routeName === "TimKiem") {
+          iconName = `ios-search${focused ? "" : "-outline"}`;
+        } else if (routeName === "TinNhan") {
+          iconName = focused ? "ios-mail-open" : "ios-mail-outline";
+        }
+        return <Ionicons name={iconName} size={30} color={tintColor} />;
+      }
+    }),
+    tabBarOptions: {
+      style: {
+        backgroundColor: "white",
+        height: 50
+      },
+      // indicatorStyle: {
+      //   backgroundColor: "rgb(3,169,244)",
+      //   height: 3
+      // },
+      activeTintColor: "rgb(3,169,244)",
+      inactiveTintColor: "rgb(96,125,139)",
+      showIcon: true,
+      showLabel: false,
+      backgroundColor: "white"
+    },
+    tabBarComponent: TabBarBottom,
+    tabBarPosition: "bottom",
+    animationEnabled: false,
+    swipeEnabled: true
+  }
+);
+
+const Drawer = DrawerNavigator(
+  {
+    Home: { screen: HomeTab },
     HoSo: { screen: HoSo },
     DanhSach: { screen: DanhSach },
     DauTrang: { screen: DauTrang },
