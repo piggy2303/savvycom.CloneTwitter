@@ -1,17 +1,18 @@
 import React, { Component } from "react";
-import { View, Text,FlatList } from "react-native";
-import styles from './HomeStyle';
+import { View, Text, FlatList } from "react-native";
+import styles from "./HomeStyle";
 
-import HomeData from './HomeData';
-import HeaderHome from './Home_Components/HeaderHome';
+import HomeData from "./Home_Components/HomeData";
+import HeaderHome from "./Home_Components/HeaderHome";
+import HomeContent from "./Home_Components/HomeContent";
 
 const data = HomeData();
 
 export default class Home extends Component {
   render() {
     return (
-      <View style={styles.ViewMain} >
-        <View style= {styles.ViewHeader} >
+      <View style={styles.ViewMain}>
+        <View style={styles.ViewHeader}>
           <HeaderHome
             title="Trang chủ"
             navigate={this.props.navigation.navigate}
@@ -19,17 +20,16 @@ export default class Home extends Component {
           />
         </View>
         <View style={styles.ViewContent}>
-        {/* <FlatList
+          
+          <FlatList
             data={data}
             renderItem={({ item }) => (
-              <Content
-                image={this.randomImage()}
-                time={this.randomTime()}
+              <HomeContent
                 data={item}
               />
             )}
             keyExtractor={(item, index) => index.toString()}
-          /> */}
+          />
         </View>
       </View>
     );
