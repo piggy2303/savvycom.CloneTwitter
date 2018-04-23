@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     borderBottomWidth: 0.3,
-    borderColor: "rgb(84,110,122)"
+    borderColor: "rgb(84,110,122)",
+    backgroundColor: "rgb(245,245,245)",
   },
   ViewAvatar: {
     flex: 1,
