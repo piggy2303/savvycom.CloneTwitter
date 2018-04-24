@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { View, Text, FlatList } from "react-native";
 import HeaderHome from "./HeaderHome";
 
-import Content from './TinNhan_Component/Content'
+import Content from "./TinNhan_Component/Content";
 import styles from "../HomeStyle";
 
-import TinNhanData from './TinNhan_Component/TinNhanData';
+import TinNhanData from "./TinNhan_Component/TinNhanData";
 
-const data = TinNhanData();
+const dataTinNhanData = TinNhanData();
 
 export default class TinNhan extends Component {
   randomImage() {
@@ -31,7 +31,7 @@ export default class TinNhan extends Component {
         </View>
         <View style={styles.ViewContent}>
           <FlatList
-            data={data}
+            data={dataTinNhanData}
             renderItem={({ item }) => (
               <Content
                 navigate={this.props.navigation.navigate}

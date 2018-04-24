@@ -1,4 +1,4 @@
-const data = [
+const data3 = [
   {
     id: 1,
     mess1: "Mauris ullamcorper purus sit amet nulla.",
@@ -694,5 +694,5 @@ const data = [
 ];
 
 export default function TinNhanData2() {
-  return data;
+  return data3;
 }

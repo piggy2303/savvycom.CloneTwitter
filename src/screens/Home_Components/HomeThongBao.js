@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-import {  View, Text, } from 'react-native';
+import React, { Component } from "react";
+import { View, Text,FlatList } from "react-native";
+import HeaderHome from "./HeaderHome";
+import styles from "../HomeStyle";
 
-import HeaderHome from './HeaderHome';
+import Content from "./ThongBao_Component/Content";
+import ThongBaoData from "./ThongBao_Component/ThongBaoData";
 
-
-import styles from '../HomeStyle';
+const dataThongBaoData = ThongBaoData();
 
 export default class HomeThongBao extends Component {
   render() {
     return (
-      <View style={styles.ViewMain} >
-        <View style= {styles.ViewHeader} >
+      <View style={styles.ViewMain}>
+        <View style={styles.ViewHeader}>
           <HeaderHome
             title="Thông báo"
             navigate={this.props.navigation.navigate}
@@ -18,7 +20,11 @@ export default class HomeThongBao extends Component {
           />
         </View>
         <View style={styles.ViewContent}>
-          <Text> Homesdf </Text>
+          <FlatList
+            data={dataThongBaoData}
+            renderItem={({ item }) => <Content data={item} />}
+            keyExtractor={(item, index) => index.toString()}
+          />
         </View>
       </View>
     );

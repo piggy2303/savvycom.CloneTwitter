@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
   ViewContent:{
     flex:8.3,
     // backgroundColor: "red",
+  },
+  ViewSearch:{
+    height: 550
   }
 });
 

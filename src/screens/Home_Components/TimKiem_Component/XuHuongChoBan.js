@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
-import styles from "./ContentStyle";
+import { View, Text, Image } from "react-native";
+import styles from "./Style";
 
-import TinNhanData2 from "./TinNhanData2";
-const dataMess = TinNhanData2();
-export default class Content extends Component {
+export default class XuHuongChoBan extends Component {
   constructor(props) {
     super(props);
-    this.resizeMess = this.resizeMess.bind(this);
   }
-
+  randomImage() {
+    let a = Math.floor(Math.random() * 14 + 1);
+    return a;
+  }
   findImage(id) {
     switch (id) {
       case 1:
@@ -60,44 +60,37 @@ export default class Content extends Component {
     }
     return link;
   }
-  resizeMess(t) {
-    let len = t.length;
-    if (len >= 60) {
-      t = t.slice(0, 50) + " ...";
-    }
-    return t;
-  }
   render() {
-    return (
-      <TouchableOpacity
-        onPress={() =>
-          this.props.navigate(this.props.navigateDestination, {
-            dataMess: dataMess[this.props.data.id]
-          })
-        }
-        style={styles.ViewMain}
-      >
-        <View style={styles.ViewAvatar}>
+    const imageLink = this.props.data.isImage ? (
+      <View style={styles.ViewImageLink}>
+        <View style={styles.ViewLink}>
+          <Text> {this.props.data.link}</Text>
+          <Text> {this.props.data.des.slice(0, 45)}...</Text>
+        </View>
+        <View style={styles.ViewImage}>
           <Image
-            style={styles.Avatar}
-            source={this.findImage(this.props.image)}
+            style={styles.ImageRight}
+            source={this.findImage(this.randomImage())}
           />
         </View>
-
-        <View style={styles.ViewMess}>
-          <View style={styles.ViewNameNick}>
-            <Text style={styles.TextName}>{this.props.data.name}</Text>
-            <Text> @{this.props.data.nick}</Text>
-          </View>
-          <View style={styles.ViewMessText}>
-            <Text>{this.resizeMess(this.props.data.mess)} </Text>
-          </View>
+      </View>
+    ) : null;
+    return (
+      <View style={styles.ViewMain}>
+        <View style={styles.ViewNumber}>
+          <Text style={styles.TextNumber}>{this.props.data.id}</Text>
         </View>
-
-        <View style={styles.ViewTime}>
-          <Text>{this.props.time} giờ</Text>
+        <View style={styles.ViewContent}>
+          <View>
+            <Text style={styles.TextName}> {this.props.data.name} </Text>
+            <Text style={styles.TextNameNumber}>
+              
+              {this.props.data.number} Tweet
+            </Text>
+          </View>
+          <View>{imageLink}</View>
         </View>
-      </TouchableOpacity>
+      </View>
     );
   }
 }

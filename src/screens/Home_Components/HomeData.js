@@ -1,4 +1,4 @@
-const data = [
+const data5 = [
   {
     id: 1,
     first_name: "Kevan",
@@ -649,5 +649,5 @@ const data = [
   }
 ];
 export default function HomeData() {
-  return data;
+  return data5;
 }

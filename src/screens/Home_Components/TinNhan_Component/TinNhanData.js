@@ -1,4 +1,4 @@
-data = [
+const data1 = [
   {
     id: 1,
     name: "Karalee",
@@ -134,5 +134,5 @@ data = [
 ];
 
 export default function TinNhanData() {
-  return data;
+  return data1;
 }
