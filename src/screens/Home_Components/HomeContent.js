@@ -72,7 +72,7 @@ export default class HomeContent extends Component {
     const ViewLikeBtn = this.state.isLike ? (
       <View style={styles.ViewIconLike}>
         <Ionicons size={17} name="ios-heart" color="rgb(244,67,54)" />
-        <Text> {this.props.data.like+1}</Text>
+        <Text> {this.props.data.like + 1}</Text>
       </View>
     ) : (
       <View style={styles.ViewIconLike}>
@@ -125,13 +125,12 @@ export default class HomeContent extends Component {
             </View>
 
             <TouchableOpacity
-              style={{flex:1}}
+              style={{ flex: 1 }}
               onPress={() => {
                 this.setState({
-                  isLike: ! this.state.isLike
+                  isLike: !this.state.isLike
                 });
               }}
-
             >
               {ViewLikeBtn}
             </TouchableOpacity>
